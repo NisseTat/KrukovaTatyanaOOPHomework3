@@ -11,7 +11,7 @@ public class Controller {
 
     //Задание 3
     public List<Student> getSortedStudentList() {
-        studentGroupService.getSortedStudentList();
+        return studentGroupService.getSortedStudentList();
     }
 
     //Задание 4
