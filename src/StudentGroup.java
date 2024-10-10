@@ -28,6 +28,10 @@ public class StudentGroup implements Iterable<Student> {
         this.studentList = studentList;
     }
 
+    public void createStudent(String firstName, String lastName, String middleName) {
+        studentList.add(new Student(firstName, lastName, middleName));
+    }
+
     @Override
     public Iterator<Student> iterator() {
         return new StudentGroupIterator(this);
