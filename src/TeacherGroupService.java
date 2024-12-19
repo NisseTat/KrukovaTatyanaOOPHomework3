@@ -37,6 +37,17 @@ public class TeacherGroupService {
         teacherGroup.createTeacher(firstName, lastName, middleName);
     }
 
+    public Teacher getTeacherById(Long teacherId) {
+        Iterator<Teacher> iterator = teacherGroup.iterator();
+        while (iterator.hasNext()) {
+            Teacher teacher = iterator.next();
+            if (teacher.getTeacherId().equals(teacherId)) {
+                return teacher;
+            }
+        }
+        return null;
+    }
+
     public void editTeacher(
             String firstName,
             String lastName,

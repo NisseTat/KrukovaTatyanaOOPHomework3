@@ -16,6 +16,17 @@ public class StudentGroupService {
         }
     }
 
+    public Student getStudentById(Long studentId) {
+        Iterator<Student> iterator = studentGroup.iterator();
+        while (iterator.hasNext()) {
+            Student student = iterator.next();
+            if (student.getSrudentId().equals(studentId)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
     //Задание 3
     public List<Student> getSortedStudentList() {
         List<Student> studentList = new ArrayList<>(studentGroup.getStudentList());

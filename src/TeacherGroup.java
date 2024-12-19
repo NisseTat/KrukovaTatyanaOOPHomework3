@@ -4,6 +4,8 @@ import java.util.List;
 public class TeacherGroup implements Iterable<Teacher> {
 
     private List<Teacher> teacherList;
+    private List<Long> teacherListIds;
+
 
     public List<Teacher> getTeacherList() {
         return teacherList;
@@ -13,8 +15,14 @@ public class TeacherGroup implements Iterable<Teacher> {
         this.teacherList = teacherList;
     }
 
+    public List<Long> getTeacherListIds() {
+        return teacherListIds;
+    }
+
     public void createTeacher(String firstName, String lastName, String middleName) {
-        teacherList.add(new Teacher(firstName, lastName, middleName));
+        Teacher teacher = new Teacher(firstName, lastName, middleName);
+        teacherList.add(teacher);
+        teacherListIds.add(teacher.getTeacherId());
     }
 
     @Override

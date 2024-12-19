@@ -19,9 +19,14 @@ import java.util.List;
 public class StudentGroup implements Iterable<Student> {
 
     private List<Student> studentList;
+    private List<Long> studentListIds;
 
     public List<Student> getStudentList() {
         return studentList;
+    }
+
+    public List<Long> getStudentListIds() {
+        return studentListIds;
     }
 
     public void setStudentList(List<Student> studentList) {
@@ -29,11 +34,17 @@ public class StudentGroup implements Iterable<Student> {
     }
 
     public void createStudent(String firstName, String lastName, String middleName) {
-        studentList.add(new Student(firstName, lastName, middleName));
+        Student student = new Student(firstName, lastName, middleName);
+        studentList.add(student);
+        studentListIds.add(student.getSrudentId());
     }
 
     @Override
     public Iterator<Student> iterator() {
         return new StudentGroupIterator(this);
+    }
+
+    public void add(Student student) {
+        studentList.add(student);
     }
 }
